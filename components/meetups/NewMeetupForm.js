@@ -4,6 +4,8 @@ import Card from '../ui/Card';
 import classes from './NewMeetupForm.module.css';
 
 function NewMeetupForm({ onAddMeetup }) {
+    debugger;
+
     const titleInputRef = useRef();
     const imageInputRef = useRef();
     const addressInputRef = useRef();

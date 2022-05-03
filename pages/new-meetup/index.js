@@ -1,9 +1,10 @@
 //domain.com/new-meetup
+import NewMeetupForm from '../../components/meetups/NewMeetupForm';
 
-export default function NewMeetup() {
-    return (
-        <div>
-            <h1>Meet Up Page</h1>
-        </div>
-    )
+export default function NewMeetupPage() {
+    function addMeetupHandler(enteredMeetupData) {
+        console.log(enteredMeetupData);
+    }
+
+    return <NewMeetupForm onAddMeetup={addMeetupHandler} />
 }
