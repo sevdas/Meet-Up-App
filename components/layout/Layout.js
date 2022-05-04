@@ -1,7 +1,8 @@
 import MainNavigation from './MainNavigation';
 import classes from './Layout.module.css';
 
-function Layout({ children }) {
+export default function Layout({ children }) {
+    debugger;
     return (
         <div>
             <MainNavigation />
@@ -10,4 +11,3 @@ function Layout({ children }) {
     );
 }
 
-export default Layout;
