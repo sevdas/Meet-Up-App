@@ -1,8 +1,16 @@
+import { useRouter } from 'next/router';
 import Image from 'next/image'
 import Card from '../ui/Card';
 import classes from './MeetupItem.module.css';
+debugger;
+export default function MeetupItem({ id, image, title, address }) {
+    // Use useRouter instead of Link to, to make use of its methods.
+    const router = useRouter()
 
-function MeetupItem({ image, title, address }) {
+    function showDetailHandler() {
+        router.push(`/${id}`) // '/' + id
+    }
+
     return (
         <li className={classes.item}>
             <Card>
@@ -10,7 +18,6 @@ function MeetupItem({ image, title, address }) {
                     <Image
                         src={image}
                         alt={title}
-                        // layout='fill'
                         width={650}
                         height={650}
                     />
@@ -20,11 +27,10 @@ function MeetupItem({ image, title, address }) {
                     <address>{address}</address>
                 </div>
                 <div className={classes.actions}>
-                    <button>Show Details</button>
+                    <button onClick={showDetailHandler}>Show Details</button>
                 </div>
             </Card>
         </li>
     );
 }
 
-export default MeetupItem;

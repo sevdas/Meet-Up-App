@@ -1,8 +1,6 @@
 // domain.com/
-import Layout from '../components/layout/Layout';
 import MeetupList from "../components/meetups/MeetupList"
 
-debugger;
 const DUMMY_MEETUPS = [
     {
         id: "m1",
@@ -23,8 +21,17 @@ const DUMMY_MEETUPS = [
 export default function HomePage() {
 
     return (
-        <Layout>
-            <MeetupList meetups={DUMMY_MEETUPS} />
-        </Layout>
+        <MeetupList meetups={DUMMY_MEETUPS} />
     )
+}
+
+
+export async function getStaticProps() {
+    // fetch data from an API
+    return {
+        props: {
+            meetups: DUMMY_MEETUPS
+        },
+        revalidate: 10 // incremental Static Generation, number of seconds NextJS will wait untill it regenerates this page for an incoming request
+    }
 }

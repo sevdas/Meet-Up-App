@@ -7,7 +7,6 @@ export default function MeetupDetail({ image, title, address, description }) {
             <Image
                 src={image}
                 alt={title}
-                // layout='fill'
                 width={650}
                 height={650}
             />
